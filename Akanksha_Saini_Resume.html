@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akanksha Saini — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --maroon: #800020;
+    --maroon-dark: #5c0016;
+    --maroon-light: #a3003a;
+    --ink: #1e0a10;
+    --accent: #800020;
+    --accent2: #a3003a;
+    --soft: #fdf6f7;
+    --rule: #e8cdd2;
+    --muted: #7a5560;
+    --white: #ffffff;
+    --sidebar-bg: #fdf0f2;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #f5e8eb;
+    color: var(--ink);
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+
+  /* ── DOWNLOAD BUTTON ── */
+  #dl-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--maroon-dark);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 32px;
+    gap: 16px;
+  }
+  #dl-bar span {
+    color: rgba(255,220,225,.6);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  #dl-btn {
+    background: var(--white);
+    color: var(--maroon-dark);
+    border: none;
+    padding: 8px 22px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background .2s, color .2s;
+  }
+  #dl-btn:hover { background: #ffe0e6; color: var(--maroon); }
+
+  /* ── OUTER WRAPPER ── */
+  .page-wrap {
+    max-width: 900px;
+    margin: 64px auto 60px;
+    background: var(--white);
+    box-shadow: 0 8px 48px rgba(128,0,32,.13);
+  }
+
+  /* ── HEADER ── */
+  .resume-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    padding: 52px 56px 36px;
+    border-bottom: 2px solid var(--maroon);
+    gap: 24px;
+    background: linear-gradient(135deg, #fff 70%, #fff5f7 100%);
+  }
+  .header-left h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 52px;
+    letter-spacing: .02em;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .header-left h1 em {
+    font-style: italic;
+    color: var(--maroon);
+  }
+  .title-line {
+    margin-top: 8px;
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .contact-grid {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .contact-grid a { color: var(--accent2); text-decoration: none; }
+  .contact-grid a:hover { text-decoration: underline; }
+  .contact-item { display: flex; align-items: center; gap: 5px; }
+  .contact-item svg { flex-shrink: 0; }
+
+  .header-right {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .avatar-frame {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--maroon);
+    flex-shrink: 0;
+  }
+  .avatar-frame img { width: 100%; height: 100%; object-fit: cover; }
+  .links-col {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 11px;
+    padding-top: 4px;
+  }
+  .links-col a {
+    color: var(--accent2);
+    text-decoration: none;
+    letter-spacing: .04em;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .links-col a:hover { text-decoration: underline; }
+
+  /* ── BODY LAYOUT ── */
+  .resume-body {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 0;
+  }
+
+  /* ── MAIN COLUMN ── */
+  .main-col {
+    padding: 40px 48px 48px 56px;
+    border-right: 1px solid var(--rule);
+    background: var(--white);
+  }
+
+  /* ── SIDEBAR ── */
+  .side-col {
+    padding: 40px 28px 48px;
+    background: var(--sidebar-bg);
+  }
+
+  /* ── SECTION TITLES ── */
+  .section {
+    margin-bottom: 36px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--maroon);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+  }
+
+  /* ── SUMMARY ── */
+  .summary-text {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.75;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15.5px;
+    font-weight: 300;
+  }
+
+  /* ── EXPERIENCE ── */
+  .job { margin-bottom: 28px; }
+  .job:last-child { margin-bottom: 0; }
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 2px;
+    flex-wrap: wrap;
+  }
+  .job-title {
+    font-weight: 500;
+    font-size: 13.5px;
+    color: var(--ink);
+  }
+  .job-company {
+    font-size: 11.5px;
+    color: var(--maroon);
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+  .job-meta {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: .03em;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .job ul {
+    margin-top: 8px;
+    padding-left: 16px;
+  }
+  .job li {
+    font-size: 12.5px;
+    color: #2e1018;
+    margin-bottom: 4px;
+    line-height: 1.55;
+  }
+  .tools-line {
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: .04em;
+  }
+  .tools-line strong { color: var(--ink); }
+
+  /* ── SIDEBAR SECTIONS ── */
+  .side-section { margin-bottom: 30px; }
+  .side-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: var(--maroon);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 5px;
+    margin-bottom: 14px;
+  }
+
+  /* Skills */
+  .skill-group { margin-bottom: 12px; }
+  .skill-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .tag {
+    background: var(--soft);
+    border: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 10.5px;
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  /* Education */
+  .edu-item { margin-bottom: 14px; }
+  .edu-school {
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--ink);
+  }
+  .edu-degree {
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+  .edu-detail {
+    font-size: 11px;
+    color: var(--accent2);
+    margin-top: 2px;
+  }
+
+  /* Awards */
+  .award-item {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-left: 2px solid var(--accent);
+  }
+  .award-name {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .award-detail {
+    font-size: 10.5px;
+    color: var(--muted);
+    margin-top: 1px;
+  }
+
+  /* Certs */
+  .cert-item {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .cert-item strong { color: var(--ink); font-weight: 500; }
+
+  /* Extra */
+  .extra-item {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-bottom: 5px;
+    padding-left: 10px;
+    position: relative;
+  }
+  .extra-item::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 10px;
+  }
+
+  /* ── PRINT / PDF ── */
+  @media print {
+    #dl-bar { display: none; }
+    body { background: #fff; }
+    .page-wrap {
+      margin: 0;
+      box-shadow: none;
+      max-width: 100%;
+    }
+    @page { margin: 0; size: A4; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Download Bar -->
+<div id="dl-bar">
+  <span>Akanksha Saini · Resume</span>
+  <button id="dl-btn" onclick="window.print()">⬇ Download as PDF</button>
+</div>
+
+<div class="page-wrap">
+
+  <!-- ── HEADER ── -->
+  <header class="resume-header">
+    <div class="header-left">
+      <h1>Akanksha <em>Saini</em></h1>
+      <div class="title-line">Visual Analyst &nbsp;·&nbsp; Data &amp; BI &nbsp;·&nbsp; IIT Jammu</div>
+      <div class="contact-grid">
+        <span class="contact-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +91 9876879070
+        </span>
+        <span class="contact-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:akankshas@perceptive-analytics.com">akankshas@perceptive-analytics.com</a>
+        </span>
+        <span class="contact-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Sas Nagar, Punjab, India
+        </span>
+        <span class="contact-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:2020ume0228@iitjammu.ac.in">2020ume0228@iitjammu.ac.in</a>
+        </span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="links-col">
+        <a href="https://www.linkedin.com/in/akanksha-saini030/" target="_blank">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://www.behance.net/akankshasaini7" target="_blank">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 12h8"/></svg>
+          Behance
+        </a>
+        <a href="https://devpost.com/akankshas" target="_blank">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/></svg>
+          Devpost
+        </a>
+        <a href="https://public.tableau.com/app/profile/akanksha.saini2909/vizzes" target="_blank">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          Tableau Public
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── BODY ── -->
+  <div class="resume-body">
+
+    <!-- ── MAIN ── -->
+    <main class="main-col">
+
+      <!-- Summary -->
+      <section class="section">
+        <div class="section-title">Professional Summary</div>
+        <p class="summary-text">Visual Analyst with professional experience delivering data-driven dashboards for US-based clients using Power BI, SQL, Tableau, Looker, and Salesforce. Strong foundation in data visualization, analytics, and stakeholder communication, complemented by an IIT Jammu engineering background and hands-on experience in IoT, ML, and UI/UX projects. Proven track record of innovation with multiple national-level awards.</p>
+      </section>
+
+      <!-- Experience -->
+      <section class="section">
+        <div class="section-title">Work Experience</div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title">Visual Analyst</div>
+              <div class="job-company">Perceptive Analytics</div>
+            </div>
+            <div class="job-meta">Hyderabad, India (Hybrid)<br>Aug 2024 – Present</div>
+          </div>
+          <ul>
+            <li>Designed and delivered interactive dashboards for multiple US clients, enabling leadership teams to track KPIs, trends, and operational performance.</li>
+            <li>Built end-to-end BI solutions using Microsoft Power BI, integrating data from SQL databases and Salesforce.</li>
+            <li>Developed and optimized complex SQL queries for data extraction, transformation, and validation.</li>
+            <li>Created executive-level and operational dashboards using Tableau and Looker, tailored to business requirements.</li>
+            <li>Collaborated closely with onshore stakeholders for requirement gathering, iterative improvements, and final delivery.</li>
+          </ul>
+          <div class="tools-line"><strong>Tools:</strong> Power BI &nbsp;|&nbsp; SQL &nbsp;|&nbsp; Tableau &nbsp;|&nbsp; Looker &nbsp;|&nbsp; Salesforce</div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title">Research Intern</div>
+              <div class="job-company">TIH Foundation for IoT and IoE (TIH-IoT) at IIT Bombay</div>
+            </div>
+            <div class="job-meta">IIT Jammu – IIT Bombay (Hybrid)<br>Apr 2023 – Mar 2024</div>
+          </div>
+          <ul>
+            <li>Developed precision agriculture solutions integrating IoT, Machine Learning, Cloud Services, and Energy Efficiency.</li>
+            <li>Designed and implemented a standalone CAD model integrated with a drone-based system for agricultural monitoring.</li>
+            <li>Built front-end dashboards for real-time data visualization using interactive graphs and charts.</li>
+            <li>Developed stray animal detection system using YOLO and OpenCV for livestock management.</li>
+            <li>Adapted ML models for pest detection and nutrient optimization using color sensors for NPK content analysis.</li>
+          </ul>
+          <div class="tools-line"><strong>Tools:</strong> AWS &nbsp;|&nbsp; AutoCAD &nbsp;|&nbsp; IoT &nbsp;|&nbsp; ML &nbsp;|&nbsp; Python &nbsp;|&nbsp; YOLO &nbsp;|&nbsp; OpenCV</div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title">Co-Inventor</div>
+              <div class="job-company">Maker Bhavan Foundation (Invention Factory)</div>
+            </div>
+            <div class="job-meta">IIT Bombay (On-site)<br>May 2023 – Jul 2023</div>
+          </div>
+          <ul>
+            <li>Built a multi-layered (three-chamber) evaporative cooling system for fruit and vegetable storage.</li>
+            <li>Incorporated commercial filters with adaptable configurations and optimized tube openings for improved cooling efficiency.</li>
+            <li>Filed a provisional patent and secured First Runner-Up position at Invention Factory 2023, IIT Bombay.</li>
+          </ul>
+          <div class="tools-line"><strong>Tools:</strong> Prototyping &nbsp;|&nbsp; Patent Preparation &nbsp;|&nbsp; Product Design &nbsp;|&nbsp; Testing</div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div>
+              <div class="job-title">UI Designer</div>
+              <div class="job-company">MapIT.ai (Start-Up)</div>
+            </div>
+            <div class="job-meta">Remote<br>Dec 2022 – Jan 2023</div>
+          </div>
+          <ul>
+            <li>Converted low-fidelity wireframes into high-fidelity designs for website development.</li>
+            <li>Enhanced website interfaces with high-end animations and interactive elements.</li>
+            <li>Created optimized user flows to improve overall website navigation and user experience.</li>
+          </ul>
+          <div class="tools-line"><strong>Tools:</strong> Figma &nbsp;|&nbsp; UI Prototyping &nbsp;|&nbsp; UX Design &nbsp;|&nbsp; Animation</div>
+        </div>
+      </section>
+
+      <!-- Professional Dev -->
+      <section class="section" style="margin-bottom:0">
+        <div class="section-title">Professional Development</div>
+        <ul style="padding-left:16px;">
+          <li style="font-size:12.5px;color:#2e1018;margin-bottom:4px;">C++ Data Structures &amp; Algorithms + LeetCode — Udemy</li>
+          <li style="font-size:12.5px;color:#2e1018;margin-bottom:4px;">Python for Computer Vision with OpenCV &amp; Deep Learning — Udemy</li>
+          <li style="font-size:12.5px;color:#2e1018;margin-bottom:4px;">Advanced C++ Programming — Udemy</li>
+          <li style="font-size:12.5px;color:#2e1018;">LLM-based Application Development Sessions — Sugarcane AI</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="side-col">
+
+      <!-- Education -->
+      <div class="side-section">
+        <div class="side-title">Education</div>
+        <div class="edu-item">
+          <div class="edu-school">IIT Jammu</div>
+          <div class="edu-degree">B.Tech · Mechanical Engineering</div>
+          <div class="edu-detail">2020 – 2024 &nbsp;·&nbsp; CGPA 8.47/10</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-school">Mount Carmel School</div>
+          <div class="edu-degree">High School Diploma</div>
+          <div class="edu-detail">2019 &nbsp;·&nbsp; 92.3%</div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="side-section">
+        <div class="side-title">Skills</div>
+        <div class="skill-group">
+          <div class="skill-label">Data &amp; Analytics</div>
+          <div class="skill-tags">
+            <span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Tableau</span><span class="tag">Looker</span><span class="tag">Salesforce</span><span class="tag">BigQuery</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Programming</div>
+          <div class="skill-tags">
+            <span class="tag">Python</span><span class="tag">C++</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Computer Vision</div>
+          <div class="skill-tags">
+            <span class="tag">OpenCV</span><span class="tag">YOLO</span><span class="tag">TensorFlow</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">UI/UX &amp; Design</div>
+          <div class="skill-tags">
+            <span class="tag">Figma</span><span class="tag">Photoshop</span><span class="tag">Illustrator</span><span class="tag">Canva</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Industry 4.0</div>
+          <div class="skill-tags">
+            <span class="tag">IoT</span><span class="tag">ML</span><span class="tag">AWS</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Design Tools</div>
+          <div class="skill-tags">
+            <span class="tag">SolidWorks</span><span class="tag">AutoCAD</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Awards -->
+      <div class="side-section">
+        <div class="side-title">Achievements</div>
+        <div class="award-item">
+          <div class="award-name">IEEE YESIST12 Qualifier 2024</div>
+          <div class="award-detail">Winner at MIET Jammu prelims · Team AgriZenix · Finals in Tunisia</div>
+        </div>
+        <div class="award-item">
+          <div class="award-name">First Runner-Up</div>
+          <div class="award-detail">Invention Factory 2023, IIT Bombay · Provisional patent filed</div>
+        </div>
+        <div class="award-item">
+          <div class="award-name">Top 10 National Finalist</div>
+          <div class="award-detail">Vishwakarma Awards for Engineering Innovations 2022</div>
+        </div>
+        <div class="award-item">
+          <div class="award-name">Chanakya Fellowship</div>
+          <div class="award-detail">TIH-IoT · Precision Agriculture Research 2023–24</div>
+        </div>
+        <div class="award-item">
+          <div class="award-name">Inter-IIT Tech Meet 2022</div>
+          <div class="award-detail">1st Place · Engineer's Conclave (Low-Prep Problem)</div>
+        </div>
+        <div class="award-item">
+          <div class="award-name">ByteVerse UI/UX Hackathon 2023</div>
+          <div class="award-detail">14th position nationally</div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="side-section">
+        <div class="side-title">Certifications</div>
+        <div class="cert-item"><strong>Working with BigQuery</strong><br>Coursera Project Network · Oct 2025</div>
+        <div class="cert-item"><strong>UX Kickstarter Workshop</strong><br>GrowthSchool · Anudeep Ayyagari</div>
+        <div class="cert-item"><strong>Climate Ninja Program 2023</strong><br>The Sustainability Mafia</div>
+      </div>
+
+      <!-- Extra -->
+      <div class="side-section">
+        <div class="side-title">Extracurricular</div>
+        <div class="extra-item">Project Exhibitor, North Tech Symposium 2023 · IIT Jammu</div>
+        <div class="extra-item">Infra Head – Renao 2022; Content &amp; Infra Head – Renao 2023</div>
+        <div class="extra-item">Women's Day Ideathon, IIT Roorkee (#GATI &amp; #TIDES)</div>
+        <div class="extra-item">Special Appreciation – SmartAg, TechVortex, Symbiosis International</div>
+      </div>
+
+    </aside>
+  </div><!-- /resume-body -->
+</div><!-- /page-wrap -->
+
+</body>
+</html>
